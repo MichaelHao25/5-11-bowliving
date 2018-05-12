@@ -86,13 +86,13 @@ gulp.task('css', function() {
         //   propWhiteList: [],
         //   minPixelValue: 0
         // }),
-        pxtorem({
-            rootValue: 100,
-            replace: true,
-            unitPrecision: 5,
-            propList: ['*'],
-            minPixelValue: 2
-        }),
+        // pxtorem({
+        //     rootValue: 100,
+        //     replace: true,
+        //     unitPrecision: 5,
+        //     propList: ['*'],
+        //     minPixelValue: 2
+        // }),
         // wap
         // pxtorem({
         //     rootValue: 20,
