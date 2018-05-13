@@ -745,11 +745,38 @@ img {
     padding-left: 0;
   }
 }
+.main .two-product .list .title {
+  padding: 20px 0 15px;
+  font-size: 162.5%;
+  color: #222;
+  line-height: 1.5;
+  border-top: 1px solid #e8e8e8;
+}
+.main .two-product .list .title h2 {
+  position: relative;
+  padding-left: 30px;
+}
+.main .two-product .list .title h2:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  background: #222;
+  margin-top: -3px;
+}
 .main .two-product .list .item:hover .content:after {
   width: 100%;
 }
 .main .two-product .list .item:hover .pic:after {
   opacity: 1;
+}
+.main .two-product .list .item.disabled-hover .pic:after {
+  display: none;
+}
+.main .two-product .list .item.disabled-hover .content:after {
+  display: none;
 }
 .main .two-product .list .item .pic {
   position: relative;
@@ -783,6 +810,15 @@ img {
     width: 100%;
     margin: 0 auto;
   }
+}
+.main .two-product .list .item .content.page-six {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.main .two-product .list .item .content.page-six:after {
+  bottom: 10px;
+  background: #a4a4a4;
+  height: 1px;
 }
 .main .two-product .list .item .content.after-a4a4a4 {
   margin-bottom: 50px;
@@ -828,6 +864,117 @@ img {
   text-align: left;
   color: #808080;
   line-height: 2;
+}
+.main .hot-word h3 {
+  padding-bottom: 10px;
+}
+.main .hot-word h3 span {
+  font-size: 137.5%;
+  line-height: 1.5;
+  display: inline-block;
+  border-bottom: 2px solid #222;
+}
+.main .hot-word .word-group a {
+  margin-top: 9px;
+  font-size: 87.5%;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #9b9b9b;
+  padding: 0 20px;
+  margin-right: 8px;
+}
+.main .product-details .product-details-header h3 {
+  font-size: 225%;
+  line-height: 2.5;
+}
+.main .product-details .product-details-header .cost {
+  padding: 0 0 10px;
+  font-size: 187.5%;
+  color: #f11;
+  line-height: 1.5;
+}
+.main .product-details .product-details-header p {
+  font-size: 93.75%;
+  color: #888;
+  line-height: 2;
+}
+.main .product-details .product-details-header .btn-group {
+  padding-top: 50px;
+}
+.main .product-details .product-details-header .btn-group a {
+  font-size: 112.5%;
+  width: 150px;
+  height: 57px;
+  line-height: 57px;
+  text-align: center;
+  text-align: center;
+  color: #fff;
+  background: #222;
+}
+.main .product-details .product-details-header .btn-group a+a {
+  margin-left: 20px;
+}
+.main .product-details .product-details-header .switch-swiper {
+  padding: 20px;
+}
+.main .product-details .product-details-header .switch-swiper .swiper-slide {
+  transition: box-shadow 0.3s;
+}
+.main .product-details .product-details-header .switch-swiper .swiper-slide.js-data-active {
+  box-shadow: 0 0 0 2px #000;
+}
+.main .product-details .content h3 {
+  font-size: 137.5%;
+  color: #222;
+  line-height: 2.8;
+  border-bottom: 2px solid #eee;
+}
+.main .product-details .content h3 span {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+.main .product-details .content h3 span:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #222;
+}
+.main .product-details .content p {
+  padding-top: 30px;
+  font-size: 100%;
+  color: #656565;
+  line-height: 2;
+}
+.main .product-details .content .pic {
+  padding-top: 30px;
+}
+.main .page-six-conetnt .page-control {
+  margin-top: 20px;
+  border-top: 1px solid #cecece;
+}
+@media (max-width: 992px) {
+  .main .page-six-conetnt .page-control {
+    padding-bottom: 100px;
+  }
+}
+.main .page-six-conetnt .page-control a {
+  margin-top: 30px;
+  display: block;
+  line-height: 48px;
+  height: 48px;
+  font-size: 87.5%;
+  color: #cecece;
+  text-align: center;
+  border: 1px solid #cecece;
+}
+.main .page-six-conetnt .page-control a.active {
+  background: #000;
+  border-color: #000;
+  color: #fff;
 }
 .main .public-page-control a {
   padding: 0 10px;
@@ -1089,6 +1236,28 @@ body.mobile-menu-layout .footer {
   left: 0;
   right: 0;
   display: none;
+}
+.layout-big-images {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 10;
+  display: none;
+}
+.layout-big-images .wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.layout-big-images .wrap img {
+  display: block;
+  width: 100%;
 }
 @-webkit-keyframes fadeIn {
   0% {

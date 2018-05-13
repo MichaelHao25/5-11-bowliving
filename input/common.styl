@@ -375,7 +375,26 @@ img
             padding-left 30px
             @media(max-width 992px)
                 padding-left 0
+       
         .list
+            .title
+                padding 20px 0 15px
+                font-size (1/16)*26*100%
+                color #222222
+                line-height 1.5
+                border-top 1px solid #e8e8e8
+                h2
+                    position relative
+                    padding-left 30px
+                    &:after
+                        content ''
+                        position absolute
+                        left 10px
+                        top 50%
+                        width 7px
+                        height 7px
+                        background #222
+                        margin-top -3px
             .item
                 &:hover
                     .content
@@ -384,6 +403,13 @@ img
                     .pic
                         &:after
                             opacity 1
+                &.disabled-hover
+                    .pic
+                        &:after
+                            display none
+                    .content
+                        &:after
+                            display none
                 .pic
                     position relative  
                     @media(max-width 768px)
@@ -408,6 +434,13 @@ img
                         max-width 500px
                         width 100%
                         margin 0 auto
+                    &.page-six
+                        margin-bottom 10px
+                        padding-bottom 10px
+                        &:after
+                            bottom 10px
+                            background #a4a4a4
+                            height 1px
                     &.after-a4a4a4
                         margin-bottom 50px
                         &:after
@@ -445,6 +478,101 @@ img
                     text-align left
                     color #808080
                     line-height 2
+     .hot-word
+            h3
+                padding-bottom 10px
+                span
+                    font-size (1/16)*22*100%
+                    line-height 1.5
+                    display inline-block
+                    border-bottom 2px solid #222222
+            .word-group
+                a
+                    margin-top 9px
+                    font-size (1/16)*14*100%
+                    line-height 32px
+                    text-align center
+                    border 1px solid #9b9b9b
+                    padding 0 20px
+                    margin-right 8px
+    .product-details
+        .product-details-header
+            h3
+                font-size (1/16)*36*100%
+                line-height 2.5
+            .cost
+                padding 0 0 10px
+                font-size (1/16)*30*100%
+                color #ff1111
+                line-height 1.5
+            p
+                font-size (1/16)*15*100%
+                color #888888
+                line-height 2
+            .btn-group
+                padding-top 50px
+                a
+                    font-size (1/16)*18*100%
+                    width 150px
+                    height 57px
+                    line-height 57px
+                    text-align center
+                    text-align center
+                    color #ffffff
+                    background #222222
+                    &+a
+                        margin-left 20px
+            .switch-swiper
+                padding 20px
+                .swiper-slide
+                    transition box-shadow 0.3s
+                    &.js-data-active
+                        box-shadow 0 0 0 2px #000
+                    
+        .content
+            h3
+                font-size (1/16)*22*100%
+                color #222222
+                line-height 2.8
+                border-bottom 2px solid #eeeeee
+                span
+                    position relative
+                    display inline-block
+                    padding 0 10px
+                    &:after
+                        content ''
+                        position absolute
+                        bottom -2px
+                        left 0
+                        right 0
+                        height 2px
+                        background #222222
+            p
+                padding-top 30px
+                font-size (1/16)*16*100%
+                color #656565
+                line-height 2
+            .pic
+                padding-top 30px
+    .page-six-conetnt
+        .page-control
+            margin-top 20px 
+            border-top 1px solid #cecece
+            @media(max-width 992px)
+                padding-bottom 100px
+            a
+                margin-top 30px
+                display block
+                line-height 48px
+                height 48px
+                font-size (1/16)*14*100%
+                color #cecece
+                text-align center
+                border 1px solid #cecece
+                &.active
+                    background #000000
+                    border-color #000
+                    color #ffffff
     .public-page-control
         a
             padding 0 10px
@@ -667,3 +795,22 @@ body.mobile-menu-layout
     left 0
     right 0
     display none
+
+.layout-big-images
+    position fixed
+    top 0
+    bottom 0
+    left 0
+    right 0
+    background rgba(0,0,0,0.8)
+    z-index 10
+    display none
+    .wrap
+        position absolute
+        top 50%
+        left 50%
+        max-width 600px
+        transform translate(-50%, -50%)
+        img
+            display block
+            width 100%
