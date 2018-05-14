@@ -100,12 +100,14 @@ img
             display flex
         .mobile-menu
             display flex
-            width 47px
-            height 47px
+            max-width 47px
+            max-height 47px
+            width 8vw
+            height 8vw
             transition 0.3s
             background transparent
             &.active
-                position absolute
+                position relative
                 left 0
                 z-index 1
                 background #ffffff
@@ -121,14 +123,14 @@ img
                         transition top 0.3s,bottom 0.3s,transform 0.3s 0.3s
             span
                 position relative
-                width 30px
+                width 70%
                 height 2px
                 background #000000
                 transition 0.3s
                 &:after
                     content ""
                     position absolute
-                    bottom -13px
+                    bottom -3vw
                     left 0
                     right 0
                     border-top 2px solid #000
@@ -136,19 +138,34 @@ img
                 &:before
                     content ''
                     position absolute
-                    top -13px
+                    top -3vw
                     left 0
                     right 0
                     border-top 2px solid #000
                     transition top 0.3s 0.3s,bottom 0.3s 0.3s,transform 0.3s
+                &:after
+                    @media(min-width 500px)
+                        bottom -13px
+                &:before
+                    @media(min-width 500px)
+                        top -13px
         .mobile-search-toggle
             height 47px
             width 47px
-            background url('img/7784a3d75d467e0c620e2a4ad68b6c13-21+22.png') center center no-repeat
+            // background url('img/7784a3d75d467e0c620e2a4ad68b6c13-21+22.png') center center/50% auto no-repeat
+            background url('img/af6332a526e49a5e14e60f9219534d7d-35+35.png') center center/60% no-repeat
             &.mobile-search-toggle-hide
                 width 1px
                 overflow hidden
                 visibility hidden
+    .bge6e7e9
+        background #e6e7e9
+        padding 20px
+        display none
+        @media(min-width 900px)
+            display none!important
+        .search-box .button
+            background url('img/af6332a526e49a5e14e60f9219534d7d-35+35.png') center center/40% auto no-repeat
     .search-box
         max-width 315px
         width 25%
@@ -157,10 +174,15 @@ img
             width 1px
             overflow hidden
             visibility hidden
-
         @media(max-width 900px)
-            position absolute
             display none
+        &.mobilt-show
+            @media(max-width 900px)
+                display block
+                width 100%
+                max-width 100%
+                margin 0 auto
+                background #fff
         input
             border none
             outline none
@@ -175,9 +197,11 @@ img
             background url('img/7784a3d75d467e0c620e2a4ad68b6c13-21+22.png') center center no-repeat
     .shoping-number
         position relative
-        display block
+        // display block
         padding-right 15px
-        
+        @media(max-width 900px)
+            padding-left 15px
+            padding-right 0
         &.shoping-number-hide
             width 1px
             overflow hidden
@@ -190,28 +214,37 @@ img
         img
             display block
             max-width 36px
+    
+    .hidden-900
+        @media(max-width 900px)
+            display none
     .menu
         height 75px
         @media(max-width 900px)
-            position relative
+            position absolute
+            left 0
+            right 0
             z-index 1
             flex-direction column
             height auto
             z-index 10
             display none
-            padding-bottom 20px
-            &.active
-                display block
+            padding-bottom 0
+            padding 10px 0
+            background #1d1e1e
+            overflow hidden
+            margin 0 -15px
             .item
-                width 94%
                 box-sizing border-box
                 padding 0 15px
-                height 75px
-                background #ffffff
-                margin-left -15px
+                height 60px
+                line-height 60px
+                background #1d1e1e
                 a
-                    text-align left
-                    justify-content flex-start
+                    text-align center
+                    font-size (1/16)*20*100%
+                    color #fff
+                    justify-content center
             .child-menu
                 display none !important
         .item
@@ -296,6 +329,9 @@ img
                 &.swiper-pagination-bullet-active
                     background #000
     .waterfalls
+        .picgroup
+            @media(max-width 768px)
+                display block
         .columns
             flex 0 0 calc(33.33% - 7px)
             transition 0.3s
@@ -315,22 +351,50 @@ img
                     opacity 0
                     transform scale(0)
                     transition 0.3s
+                    @media(max-width 768px)
+                        position static
+                        opacity 1
+                        transform scale(1)
+                        background none
                     h3
                         font-size (1/16)*36*100%
                         color #ffffff
                         line-height 2
                         border-bottom 1px solid #fff
+                        @media(max-width 768px)
+                            padding 0 5px
+                            color #222222
+                            border-color #222222
+                    p
+                        display block
+                        padding 10px 0 5px
+                        text-align center
+                        font-size (1/16)*22*100%
+                        color #222222  
+                        display none
+                        @media(max-width 768px)
+                            display block
             &.col-umns-2
             &.col-umns-3
             &.col-umns-4
             &.col-umns-5
                 .item
                     flex 0 0 calc(50% - 5px)
+                    @media(max-width 1200px)
+                        height calc(100% - 5px)
+                        overflow hidden
+                    @media(max-width 768px)
+                        &+.item
+                            margin-top 10px
             &:nth-child(n+4)
                 margin-top 10px
             @media(max-width 1200px)
                 flex 0 0 calc(50% - 5px)
                 &:nth-child(n+3)
+                    margin-top 10px
+            @media(max-width 768px)
+                flex 0 0 100%
+                &:nth-child(n+1)
                     margin-top 10px
     .public-nav
         padding-left 50px
@@ -354,6 +418,8 @@ img
             padding-bottom 999px
             margin-bottom -999px
             background #f7f7f7
+            @media(max-width 768px)
+                display none
             h3
                 height 50px
                 line-height 50px
@@ -479,22 +545,23 @@ img
                     color #808080
                     line-height 2
      .hot-word
-            h3
-                padding-bottom 10px
-                span
-                    font-size (1/16)*22*100%
-                    line-height 1.5
-                    display inline-block
-                    border-bottom 2px solid #222222
-            .word-group
-                a
-                    margin-top 9px
-                    font-size (1/16)*14*100%
-                    line-height 32px
-                    text-align center
-                    border 1px solid #9b9b9b
-                    padding 0 20px
-                    margin-right 8px
+        display none
+        h3
+            padding-bottom 10px
+            span
+                font-size (1/16)*22*100%
+                line-height 1.5
+                display inline-block
+                border-bottom 2px solid #222222
+        .word-group
+            a
+                margin-top 9px
+                font-size (1/16)*14*100%
+                line-height 32px
+                text-align center
+                border 1px solid #9b9b9b
+                padding 0 20px
+                margin-right 8px
     .product-details
         .product-details-header
             h3
@@ -513,7 +580,8 @@ img
                 padding-top 50px
                 a
                     font-size (1/16)*18*100%
-                    width 150px
+                    max-width 150px
+                    width 40%
                     height 57px
                     line-height 57px
                     text-align center
@@ -749,6 +817,23 @@ img
         
         
             
+.mobile-menu
+    display none
+    @media(max-width 900px)
+        display block
+    .list
+        padding 0 15px
+        font-size (1/16)*20*100%
+        color #222222
+        a
+            line-height 3
+            display block
+            border-bottom 1px solid #e3e3e3
+            background url('img/0161e26112f622f669ceb29699ea53b2-13+26.png') right 10px center/auto 50% no-repeat
+            &.title
+                font-weight bold
+                text-transform uppercase
+                background none
 .footer
     background #333333
     .brand
@@ -779,13 +864,15 @@ img
         transform translateY(0)
 
 body.mobile-menu-layout
-    .welcome
-        position relative
-    .bg-block-40-layout
-        display block
-    .main
-    .footer
-        display none
+    height auto
+    // .welcome
+    //     position relative
+    // .bg-block-40-layout
+    //     display block
+    // .main
+    // .footer
+    // .mobile-menu
+    //     display none
 .bg-block-40-layout
     background #000000
     opacity 0.4

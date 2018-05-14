@@ -2,6 +2,7 @@ var mySwiper = new Swiper('.banner .swiper-container', {
 	autoplay: 3000,
 	loop: true,
 	pagination: '.banner .swiper-pagination',
+	paginationClickable :true,
 })
 var big_swiper = new Swiper('.big-swiper.swiper-container', {
 	onSlideChangeStart: function (swiper) {
@@ -12,6 +13,8 @@ var big_swiper = new Swiper('.big-swiper.swiper-container', {
 var switch_swiper = new Swiper('.switch-swiper.swiper-container', {
 	slidesPerView: 3,
 	spaceBetween: 20,
+	centeredSlides : true,
+	initialSlide :1,
 	onTap: function (swiper) {
 
 		swiper.slideTo(swiper.clickedIndex, 1000, false);
@@ -50,8 +53,13 @@ $('.header .menu .item').on('mouseenter', function () {
 $('.header .mobile-menu-wrap .mobile-menu').on('click', function () {
 	$('body').toggleClass('mobile-menu-layout')
 	$(this).toggleClass('active')
+
 	$('.header .menu').toggleClass('active')
+	$('.header .menu').slideToggle();
 })
 $('.bg-block-40-layout').on('click', function () {
-	$('.header .mobile-menu .mobile-menu').trigger('click')
+	$('.header .mobile-menu-wrap .mobile-menu').trigger('click')
+})
+$('.header .mobile-menu-wrap .mobile-search-toggle').on('click',function() {
+	$('.header .bge6e7e9').slideToggle()
 })
