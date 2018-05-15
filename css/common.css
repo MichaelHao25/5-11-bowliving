@@ -656,13 +656,23 @@ img {
 .header .menu .item .child-menu .right-content h3 {
   padding-top: 20px;
 }
+.header .menu .item .child-menu .left-content {
+  width: 45vw;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 560px;
+}
 .header .menu .item .child-menu .left-content .nav {
   width: 140px;
+  flex: 0 0 25%;
+  box-sizing: border-box;
+}
+.header .menu .item .child-menu .left-content .nav:nth-child(n+5) {
+  padding-top: 35px;
 }
 @media (max-width: 1500px) {
   .header .menu .item .child-menu .left-content .nav {
     width: auto;
-    padding-right: 50px;
   }
 }
 .header .menu .item .child-menu .left-content h3 {
