@@ -1221,8 +1221,25 @@ img {
   margin: 30px 0 50px;
   height: 170px;
 }
+@media (max-width: 768px) {
+  .main .contact-us .top .item {
+    height: auto;
+    margin: 0;
+  }
+}
 .main .contact-us .top .item.bdbe4e4e4 {
   border-bottom: 1px solid #e4e4e4;
+}
+@media (max-width: 768px) {
+  .main .contact-us .top .item.bdbe4e4e4 {
+    border-bottom: none;
+  }
+}
+@media (max-width: 768px) {
+  .main .contact-us .top .qrcode-container {
+    padding: 20px 0 0;
+    flex-direction: column;
+  }
 }
 .main .contact-us .top .qecode img {
   display: block;
@@ -1233,6 +1250,11 @@ img {
   color: #222;
   padding-bottom: 15px;
 }
+@media (max-width: 768px) {
+  .main .contact-us .top h3 {
+    padding-top: 15px;
+  }
+}
 .main .contact-us .top p {
   font-size: 112.5%;
   color: #222;
@@ -1242,6 +1264,18 @@ img {
   padding-left: 32px;
   font-size: 137.5%;
   color: #222;
+}
+@media (max-width: 768px) {
+  .main .contact-us .top .name {
+    padding-left: 0;
+    padding-top: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 400px) {
+  .main .contact-us .top .name {
+    font-size: 75%;
+  }
 }
 .main .contact-us .messages {
   padding: 40px 0 60px;
